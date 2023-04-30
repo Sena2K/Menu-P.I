@@ -33,7 +33,7 @@ bool tocar_trilha = false;
 int main() {
 
 	if (!al_init()) {
-		al_show_native_message_box(NULL, "ERROR ", "ERROR: 404", "Não foi possivel carregar a allegro", NULL, ALLEGRO_MESSAGEBOX_ERROR);
+		al_show_native_message_box(NULL, "ERROR ", "ERROR: 404", "NÃ£o foi possivel carregar a allegro", NULL, ALLEGRO_MESSAGEBOX_ERROR);
 		return -1;
 	}
 
@@ -106,12 +106,12 @@ int jogar()
 int menu() {
 	int segundos = 0;
 	int x = -1, y = -1;
-	ALLEGRO_COLOR blanco = al_map_rgb(255, 255, 255);
-	ALLEGRO_COLOR azar = al_map_rgb(255, 50, 65);
+	ALLEGRO_COLOR branco = al_map_rgb(255, 255, 255);
+	ALLEGRO_COLOR amarelo = al_map_rgb(255, 50, 65);
 
 	ALLEGRO_BITMAP* menu_null = al_load_bitmap("telestia1.jpg");
-	ALLEGRO_BITMAP* menu_jugar = al_load_bitmap("telestiaj.jpg");
-	ALLEGRO_BITMAP* menu_salir = al_load_bitmap("telestias.jpg");
+	ALLEGRO_BITMAP* menu_jogar = al_load_bitmap("telestiaj.jpg");
+	ALLEGRO_BITMAP* menu_sair = al_load_bitmap("telestias.jpg");
 	//menu
 
 	int botoes[] = { 0 };
@@ -132,9 +132,9 @@ int menu() {
 		if (botoes[0] == 0)
 			al_draw_bitmap(menu_null, 0, 0, 0);
 		else if (botoes[0] == 1)
-			al_draw_bitmap(menu_jugar, 0, 0, 0);
+			al_draw_bitmap(menu_jogar, 0, 0, 0);
 		else
-			al_draw_bitmap(menu_salir, 0, 0, 0);
+			al_draw_bitmap(menu_sair, 0, 0, 0);
 
 		if (Evento.type == ALLEGRO_EVENT_MOUSE_AXES || Evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN)
 		{
